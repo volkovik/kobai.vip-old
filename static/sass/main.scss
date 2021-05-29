@@ -1,19 +1,72 @@
+@font-face {
+    font-family: "MonumentExtended-Regular";
+    src: url("../fonts/MonumentExtended-Regular.otf");
+}
+
+@font-face {
+    font-family: "MonumentExtended-Ultrabold";
+    src: url("../fonts/MonumentExtended-Ultrabold.otf");
+}
+
 html, body {
     margin: 0;
     background: black;
     overflow: hidden;
     height: 100%;
+    color: white;
 }
 
 main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 1;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: auto;
 }
 
 #cover {
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+#top-block, #bottom-block {
+    height: 1.5rem;
+}
+
+.block {
     z-index: 1;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.ticker {
+    font-size: 1.5rem;
+    font-family: "MonumentExtended-Regular";
+    white-space: nowrap;
+}
+
+.ticker__copy {
+    padding-right: 0.6rem;
+
+    span {
+        padding-right: 0.6rem;
+    }
+}
+
+#top-block {
+    padding-top: 0.5rem;
+}
+
+#bottom-block {
+    padding-bottom: 0.5rem;
 }
 
 @keyframes popout {
@@ -34,8 +87,6 @@ main {
 #logo {
     width: 60%;
     height: 60%;
-    margin-left: 50px;
-    margin-right: 50px;
     animation-name: popout;
     animation-duration: 1s;
     animation-timing-function: ease;
@@ -80,10 +131,7 @@ main {
     position: fixed;
     filter: brightness(0.7);
     transform: scale(1.1);
-    -ms-transform: scale(1.1, 1.1);
-    -webkit-transform: scale(1.1, 1.1);
-    -moz-transform: scale(1.1, 1.1);
-    -o-transform: scale(1.1, 1.1);
+    box-shadow: inset 0px 40px 50px -30px #000000;
 }
 
 @media all and (max-width: 500px) {
@@ -97,3 +145,4 @@ main {
         }
     }  
 }
+

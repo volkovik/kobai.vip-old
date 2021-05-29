@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>kobai</title>
     <meta charset="UTF-8">
@@ -7,29 +8,42 @@
     <link rel="icon" href="static/images/icon.ico">
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-          integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
+
 <body>
-<img id="background" src="static/images/background.jpg" alt="">
-<main>
-    <div id="cover">
-        <div id="logo-cover">
-            <img src="static/images/logo.png" alt="" id="logo" width="479" height="134">
+    <img id="background" src="static/images/background.jpg" alt="">
+    <main>
+        <div id="top-block" class="block">
+            <div class="ticker data-reverse="bool" data-pausable="bool data-speed="0.25"">
+                <div class="ticker-content"></div>
+            </div>
         </div>
-        <div id="links">
-            <a href="https://www.youtube.com/c/kobaiii" class="fab fa-youtube"
-               target="_blank"></a>
-            <a href="https://twitter.com/kobaiii" class="fab fa-twitter" target="_blank"></a>
-            <a href="https://vk.com/kobaiii" class="fab fa-vk" target="_blank"></a>
-            <a href="https://discord.com/invite/x7AFPXf" class="fab fa-discord" target="_blank"></a>
-            <a href="https://steamcommunity.com/id/kobaiii" class="fab fa-steam" target="_blank"></a>
-            <a href="https://www.instagram.com/1kobai/" class="fab fa-instagram" target="_blank"></a>
-            <a href="https://soundcloud.com/kobaiii" class="fab fa-soundcloud" target="_blank"></a>
+        <div id="cover" class="block">
+            <div id="logo-cover">
+                <img src="static/images/logo.png" alt="" id="logo" width="479" height="134">
+            </div>
+            <div id="links">
+                <a href="https://www.youtube.com/c/kobaiii" class="fab fa-youtube" target="_blank"></a>
+                <a href="https://twitter.com/kobaiii" class="fab fa-twitter" target="_blank"></a>
+                <a href="https://vk.com/kobaiii" class="fab fa-vk" target="_blank"></a>
+                <a href="https://discord.com/invite/x7AFPXf" class="fab fa-discord" target="_blank"></a>
+                <a href="https://steamcommunity.com/id/kobaiii" class="fab fa-steam" target="_blank"></a>
+                <a href="https://www.instagram.com/1kobai/" class="fab fa-instagram" target="_blank"></a>
+                <a href="https://soundcloud.com/kobaiii" class="fab fa-soundcloud" target="_blank"></a>
+            </div>
         </div>
-    </div>
-</main>
-<footer>
-</footer>
-<script src="static/js/main.js"></script>
+        <div id="bottom-block" class="block">
+            <div class="ticker" data-reverse="bool" data-pausable="bool data-speed="0.25">
+                <div class="ticker-content"></div>
+            </div>
+        </div>
+    </main>
+    <!-- todo: check another JQuery CDNs -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="static/js/node_modules/marquee3000/marquee3k.js"></script>
+    <script src="static/js/main.js"></script>
 </body>
+
 </html>
