@@ -25,30 +25,43 @@ main {
     padding: auto;
 }
 
-#cover {
-    flex-wrap: wrap;
-    align-self: center;
+// Ticker on the top and on the bottom of the page
+@keyframes fadein_ticker {
+    from { 
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    to { 
+        opacity: 1; 
+    }
 }
 
 #top-block, #bottom-block {
     height: 1.5rem;
+    display: flex;
+    align-items: center;
+    animation-name: fadein_ticker;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    transition: 0.3s;
+}
+
+#top-block {
+    margin-top: 0.5rem;
+}
+
+#bottom-block {
+    margin-bottom: 0.2rem;
 }
 
 .block {
     z-index: 1;
 }
 
-@keyframes marquee {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
 .ticker {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-family: "MonumentExtended-Regular";
     white-space: nowrap;
 }
@@ -61,22 +74,9 @@ main {
     }
 }
 
-#top-block {
-    padding-top: 0.5rem;
-}
-
-#bottom-block {
-    padding-bottom: 0.5rem;
-}
-
-@keyframes popout {
-    from {
-        transform: scale(0);
-    }
-    
-    to {
-        transform: scale(1);
-    }
+#cover {
+    flex-wrap: wrap;
+    align-self: center;
 }
 
 #logo-cover {
@@ -84,10 +84,20 @@ main {
     justify-content: center;
 }
 
+// Logo and its animation
+@keyframes popout_logo {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 #logo {
     width: 60%;
     height: 60%;
-    animation-name: popout;
+    animation-name: popout_logo;
     animation-duration: 1s;
     animation-timing-function: ease;
     transition: 0.3s;
@@ -98,6 +108,21 @@ main {
     }
 }
 
+// Links and animations with it
+@keyframes popout_links {
+    from {
+        transform: scale(0);
+        display: none;
+    }
+    25% {
+        transform: scale(0);
+        display: block;
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 #links {
     text-decoration: none;
     margin-top: 2rem;
@@ -105,6 +130,10 @@ main {
     justify-content: center;
     align-items: center;
     height: 3rem;
+    transition: 0.3s;
+    animation-name: popout_links;
+    animation-duration: 3s;
+    animation-timing-function: ease;
 }
 
 .fab {
@@ -114,13 +143,22 @@ main {
     margin-right: 10px;
     margin-left: 10px;
     text-shadow: 0 0 11px rgba(0, 0, 0, 0.72);
-    transition: 0.3s;
-    animation-name: popout;
-    animation-duration: 1s;
-    animation-timing-function: ease;
 
     &:hover {
         font-size: 2.6rem;
+    }
+}
+
+// Background and animation with it
+@keyframes fadein_background {
+    from {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 
@@ -132,8 +170,12 @@ main {
     filter: brightness(0.7);
     transform: scale(1.1);
     box-shadow: inset 0px 40px 50px -30px #000000;
+    animation-name: fadein_background;
+    animation-duration: 3s;
+    animation-timing-function: ease;
 }
 
+// Adaptive layout configurations
 @media all and (max-width: 500px) {
     #logo {
         width: 90%;
@@ -145,4 +187,3 @@ main {
         }
     }  
 }
-

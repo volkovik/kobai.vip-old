@@ -32,46 +32,62 @@ main {
   padding: auto;
 }
 
-#cover {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+@-webkit-keyframes fadein_ticker {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein_ticker {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #top-block, #bottom-block {
   height: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation-name: fadein_ticker;
+          animation-name: fadein_ticker;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#top-block {
+  margin-top: 0.5rem;
+}
+
+#bottom-block {
+  margin-bottom: 0.2rem;
 }
 
 .block {
   z-index: 1;
 }
 
-@-webkit-keyframes marquee {
-  from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  to {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@keyframes marquee {
-  from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  to {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
 .ticker {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-family: "MonumentExtended-Regular";
   white-space: nowrap;
 }
@@ -84,34 +100,12 @@ main {
   padding-right: 0.6rem;
 }
 
-#top-block {
-  padding-top: 0.5rem;
-}
-
-#bottom-block {
-  padding-bottom: 0.5rem;
-}
-
-@-webkit-keyframes popout {
-  from {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes popout {
-  from {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+#cover {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #logo-cover {
@@ -123,11 +117,33 @@ main {
           justify-content: center;
 }
 
+@-webkit-keyframes popout_logo {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes popout_logo {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 #logo {
   width: 60%;
   height: 60%;
-  -webkit-animation-name: popout;
-          animation-name: popout;
+  -webkit-animation-name: popout_logo;
+          animation-name: popout_logo;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-timing-function: ease;
@@ -139,6 +155,40 @@ main {
 #logo:hover {
   width: 65%;
   height: 65%;
+}
+
+@-webkit-keyframes popout_links {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: none;
+  }
+  25% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: block;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes popout_links {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: none;
+  }
+  25% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: block;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 #links {
@@ -154,6 +204,14 @@ main {
       -ms-flex-align: center;
           align-items: center;
   height: 3rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-animation-name: popout_links;
+          animation-name: popout_links;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
 }
 
 .fab {
@@ -163,18 +221,34 @@ main {
   margin-right: 10px;
   margin-left: 10px;
   text-shadow: 0 0 11px rgba(0, 0, 0, 0.72);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  -webkit-animation-name: popout;
-          animation-name: popout;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
 }
 
 .fab:hover {
   font-size: 2.6rem;
+}
+
+@-webkit-keyframes fadein_background {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein_background {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #background {
@@ -189,6 +263,12 @@ main {
           transform: scale(1.1);
   -webkit-box-shadow: inset 0px 40px 50px -30px #000000;
           box-shadow: inset 0px 40px 50px -30px #000000;
+  -webkit-animation-name: fadein_background;
+          animation-name: fadein_background;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
 }
 
 @media all and (max-width: 500px) {

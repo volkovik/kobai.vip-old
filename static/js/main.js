@@ -12,14 +12,9 @@ var hueRotate = 0;
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
-    // While there remain elements to shuffle...
     while (0 !== currentIndex) {
-
-        // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-
-        // And swap it with the current element.
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
@@ -28,18 +23,18 @@ function shuffle(array) {
     return array;
 }
 
-// todo: realize how to marquee text
 $(function () {
+    // Shuffle labels and add to ticker blocks
     shuffle(helloInDifferentLanguages)
     helloInDifferentLanguages.forEach(word => {
         $("#top-block .ticker .ticker-content").append(`<span>${word}<\span>`)
     })
-    
     shuffle(helloInDifferentLanguages)
     helloInDifferentLanguages.forEach(word => {
         $("#bottom-block .ticker .ticker-content").append(`<span>${word}<\span>`)
     })
 
+    // Marquee labels in
     Marquee3k.init({selector: "ticker"})
 })
 
@@ -67,6 +62,7 @@ $("#logo").click(function () {
             $("#background").css("filter", "hue-rotate(0deg) invert(0) brightness(0.7)")
             $("#logo").css("filter", "hue-rotate(0deg) invert(0)")
             $("#links").css("filter", "hue-rotate(0deg) invert(0)")
+            $(".ticker").css("filter", "hue-rotate(0deg) invert(0)")
         }
     }
 })
@@ -82,6 +78,7 @@ setInterval(function () {
 
         $("#logo").css("filter", `invert(${inverted})`)
         $("#links").css("filter", `invert(${inverted})`)
+        $(".ticker").css("filter", `invert(${inverted})`)
     }
 }, 100);
 
